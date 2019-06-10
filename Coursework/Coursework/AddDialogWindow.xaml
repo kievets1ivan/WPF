@@ -1,0 +1,38 @@
+﻿<Window x:Class="Coursework.AddDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework"
+        xmlns:models="clr-namespace:Coursework.Models" 
+        xmlns:core="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Додати абонента" Height="320" Width="440" ResizeMode="NoResize" >
+    <Window.Resources>
+        <ObjectDataProvider x:Key="myEnum" MethodName="GetValues" ObjectType="{x:Type core:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="models:TypeOperator" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Canvas Margin="0,6,0,-6" >
+
+            <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Canvas.Left="235" Canvas.Top="202" Click="ButtonCancel_Click"/>
+            <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Height="50" Canvas.Left="75" Canvas.Top="202" Click="ButtonAdd_Click"/>
+            <Label Content="Iм'я:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="45" Canvas.Left="128" Canvas.Top="35" Height="26"/>
+            <Label Content="Номер телефону:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="105" Canvas.Left="68" Canvas.Top="66" Height="26"/>
+            <Label Content="Вымовленно часу:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="112" Canvas.Left="61" Canvas.Top="97" Height="26"/>
+            <Label Content="год." HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="30" Canvas.Left="208" Canvas.Top="97" Height="26"/>
+            <Label Content="хв." HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="25" Canvas.Left="278" Canvas.Top="97" Height="26"/>
+            <Label Content="сек." HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="31" Canvas.Left="347" Canvas.Top="97" Height="26"/>
+            <Label Content="Оператор:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.663,-1.164" Width="68" Canvas.Left="105" Canvas.Top="134"/>
+            <ComboBox x:Name="OperatopField" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Source={StaticResource myEnum}}" Canvas.Left="173" Canvas.Top="138"/>
+            <TextBox x:Name="NameField" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="173" Canvas.Top="35"/>
+            <TextBox x:Name="PhoneField" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="173" Canvas.Top="66"/>
+            <TextBox x:Name="HoursField" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="35" Canvas.Left="173" Canvas.Top="97"/>
+            <TextBox x:Name="MinField" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="35" Canvas.Left="243" Canvas.Top="97"/>
+            <TextBox x:Name="SecField" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="35" Canvas.Left="312" Canvas.Top="97"/>
+        </Canvas>
+    </Grid>
+</Window>
