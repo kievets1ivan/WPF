@@ -21,7 +21,6 @@ namespace Coursework.ViewModels
         //Manage help dialog
         public HelpViewModel Help { get; set; }
 
-        public DataModel Document { get => _document; }
 
         public MainViewModel()
         {
@@ -33,6 +32,7 @@ namespace Coursework.ViewModels
         }
         
         //public ObservableCollection<Abonent> InitGrid() => _document.GetCache();
+        //public DataModel Document { get => _document; }
 
         
     }

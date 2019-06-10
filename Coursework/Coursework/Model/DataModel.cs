@@ -9,9 +9,8 @@ namespace Coursework.Models
 {
     public class DataModel : ObservableObject
     {
-        //static public DataModel instance;
         public ObservableCollection<Abonent> Abonents;
-        //public IReadOnlyCollection<Abonent> Abonents => abonents;
+        //static private DataModel instance;
 
         /*static public DataModel GetInstance()
         {
@@ -25,7 +24,7 @@ namespace Coursework.Models
         {
             Abonents = new ObservableCollection<Abonent>();
 
-            Abonents.Add(new Abonent("dsa", "dsada", new Time(1, 3, 4), new Operator(TypeOperator.Lifecell, 0.03m)));
+            Abonents.Add(new Abonent("dsa", "dsada", new Time(1, 3, 4), new Operator(TypeOperator.Lifecell, 0.03m)));//для проверки
         }
 
         public ObservableCollection<Abonent> GetCache() => Abonents;
